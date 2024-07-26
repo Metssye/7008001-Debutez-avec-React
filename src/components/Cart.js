@@ -4,6 +4,7 @@ import '../styles/Cart.css'
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
 	const items = Object.keys(cart)
+
 	const total = items.reduce(
 		(acc, item) => acc + cart[item].amount * cart[item].price,
 		0
@@ -11,6 +12,7 @@ function Cart({ cart, updateCart }) {
 	useEffect(() => {
 		document.title = `LMJ: ${total}€ d'achats`
 	}, [total])
+
 
 	return isOpen ? (
 		<div className='lmj-cart'>
